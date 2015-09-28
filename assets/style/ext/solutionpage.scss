@@ -13,6 +13,7 @@ $border-color-b: #ff9250;
 $border-color-c: #ff7dc0;
 $border-color-d: #ca9aff;
 $border-color-e: #e3e3e3;
+$bg-a: #fbeded;
 
 .gather-inline {
 	display: block;
@@ -35,6 +36,7 @@ $border-color-e: #e3e3e3;
         }
         a {
         	display: block;
+        	box-sizing: border-box;
         	padding: 50px 0;
 	        img {
 	        	display: block;
@@ -72,6 +74,7 @@ h1 {
 		width: 238px;
 		height: 372px;
 		@include crossprop(box-sizing, border-box);
+		@include crossprop(transition, margin-top 200ms linear);
 		float: left;
 		margin-right: 12px;
 		border: 1px solid #dcdcdc;
@@ -109,14 +112,20 @@ h1 {
 			padding: 6px 24px;
 			border: 1px solid $font-color-c;
 			@include crossprop(border-radius, 3px); 
+			@include crossprop(transition, color 200ms linear);
+			@include crossprop(transition, background 200ms linear);
 			font-size: $font-size-a;
 			color: $font-color-c;
 			text-decoration: none;
 		}
-		.active {
-			color: #fff;
-			background: $font-color-c;
+		&:hover {
+			margin-top: -13px;
+			a {
+				color: #fff;
+				background: $font-color-c;
+			}
 		}
+		
 	}
 }
 h2 {
@@ -139,9 +148,6 @@ p {
 			top:100px;
 			right: 0;
 			padding: 8px 17px;
-			border: 1px solid $font-color-c;
-			@include crossprop(border-radius, 3px); 
-			color: $font-color-c;
 			text-decoration: none;
 		}
 		.col-l {
@@ -233,7 +239,7 @@ p {
 		}
 	} 
 }
-.huodong {
+.lottery {
 	background: url("/assets/img/solution/bg-huodong.png") no-repeat 0 0;
 	padding: 19px 0;
 	.center {
@@ -247,11 +253,15 @@ p {
 	}
 	a {
 		padding: 9px 26px;
-		@include crossprop(border-radius, 3px); 
+		@include crossprop(border-radius, 3px);
+		@include crossprop(transition, background 150ms linear); 
 		color: $color;
 		font-size: $font-size-a;
-		background: $skin-light;
+		background: $bg-a;
 		text-decoration: none;
+		&:hover{
+			background: $skin-light;
+		}
 	}
 }
 
