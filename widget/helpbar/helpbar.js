@@ -8,12 +8,14 @@ define(function (require, exports, module){
     var service = toolbar.find('.tool').eq(0);
     var sTop = toolbar.find('.tool').eq(1);
     var widget = require('widget/anchor');
+    var offsettop = 0;
 
-    $(window).on('scroll', function (e) {
-        if (g.scrollY > 600 && !toolbar.hasClass('active')) {
+    $(document).on('scroll', function (e) {
+        offsettop = g.scrollY ? g.scrollY : document.documentElement.scrollTop;        
+        if (offsettop > 600 && !toolbar.hasClass('active')) {
             toolbar.addClass('active');
         }
-        if (g.scrollY < 800) {
+        if (offsettop < 800) {
             toolbar.removeClass('active');
         }
     });

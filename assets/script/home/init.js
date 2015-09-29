@@ -14,6 +14,7 @@ define(function (require, exports, module) {
 
     // 滚动
     var g = window;
+    var pos = 0;
     var posArr = [1282, 2075, 2571, 2923];
     var eArr = ['.round-inline', '.cloudy', '.cloudy-m'];
     var e1 = $(eArr[0]),
@@ -21,8 +22,8 @@ define(function (require, exports, module) {
         e3 = $(eArr[2]),
         eA = $(eArr.join(','));
 
-    $(g).on('scroll', function () {
-         var pos = g.scrollY;
+    $(document).on('scroll', function () {
+         pos = g.scrollY ? g.scrollY : document.documentElement.scrollTop;
          
          if(pos < posArr[0]) {
             eA.removeClass('active');
