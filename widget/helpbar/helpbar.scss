@@ -4,11 +4,14 @@
 @import  '../../assets/style/lib/skin.scss';
 
 #toolbar {
+    visibility: hidden;
+    z-index: -1;
     position: fixed;
     bottom: 30px;
     right: 30px;
     width: 80px;
-    @include crossprop(perspective, 500); 
+    @include crossprop(perspective, 2500px);
+    
     .tool {
         width: 80px;
         height: 60px;
@@ -16,7 +19,8 @@
         margin-bottom: 1px;
         cursor: pointer;
         @include transproptime(background, 200ms);
-        
+        @include crossprop(transform-style, preserve-3d);
+        @include crossprop(transform-origin, 50% 0%); 
     }
     .tool:first-child {
         background: rgba(229, 77, 68, 0.8);
@@ -31,3 +35,42 @@
         }
     }
 }
+#toolbar.active {
+    visibility: visible;
+    z-index: 10;
+    .tool{
+        @include crossprop(animation, toolbarin 1000ms cubic-bezier(0.42, 0, 0.58, 1));
+    }
+}
+@keyframes toolbarin {
+   0%{  transform: rotateX(-60deg);  }
+   33.3%{  transform: rotateX(45deg);  }
+   66.6%{  transform: rotateX(-20deg);  }
+   100%{  transform: rotateX(0);  } 
+}
+@-webkit-keyframes toolbarin {
+   0%{  -webkit-transform: rotateX(-60deg);  }
+   33.3%{  -webkit-transform: rotateX(45deg);  }
+   66.6%{  -webkit-transform: rotateX(-20deg);  }
+   100%{  -webkit-transform: rotateX(0);  } 
+}
+@-moz-keyframes toolbarin {
+   0%{  -moz-transform: rotateX(-60deg);  }
+   33.3%{  -moz-transform: rotateX(45deg);  }
+   66.6%{  -moz-transform: rotateX(-20deg);  }
+   100%{  -moz-transform: rotateX(0);  } 
+}
+@-o-keyframes toolbarin {
+   0%{  -o-transform: rotateX(-60deg);  }
+   33.3%{  -o-transform: rotateX(45deg);  }
+   66.6%{  -o-transform: rotateX(-20deg);  }
+   100%{  -o-transform: rotateX(0);  } 
+}
+@-ms-keyframes toolbarin {
+   0%{  -ms-transform: rotateX(-60deg);  }
+   33.3%{  -ms-transform: rotateX(45deg);  }
+   66.6%{  -ms-transform: rotateX(-20deg);  }
+   100%{  -ms-transform: rotateX(0);  } 
+}
+
+
