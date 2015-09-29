@@ -16,4 +16,11 @@ define(function (require) {
     require('home/init');
     /**widget公共引用*/
     require('widget/footbar');
+    var widget = require('widget/slidebanner');
+    var insslide = new widget.slide({
+        container: '.slidebanner .banner',
+        slide: '.slidebanner .banner > li',
+        handler: '.slidebanner .dot-index'
+    });
+    
 });
