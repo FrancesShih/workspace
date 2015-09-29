@@ -399,8 +399,28 @@
 }
 
 .promvip li {
-    border-right: 1px solid $color-light;
     color: $color-light;
+    float: left;
+    padding: 30px 75px;
+    text-align: center;
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        border-right: 1px solid $skin-light;
+        right: 0;
+        height: 45px;
+        top: 45px;
+    }
+    &:first-child {
+        padding-left: 0;
+    }
+    &:last-child {
+        padding-right: 0;
+        &:after {
+            border-right: 0;
+        }
+    }
     a {
         color: $color-light;
         span {
