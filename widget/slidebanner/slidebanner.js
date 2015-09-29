@@ -86,6 +86,7 @@ define(function (require, exports, module) {
                 }, 300);
                 self.contents.removeClass('active').eq(i).addClass('active');
                 _id && clearTimeout(_id);
+                _id = autoslide(self);
             });
         });
 
@@ -103,7 +104,7 @@ define(function (require, exports, module) {
     function autoslide (object) {
         var o = object;
         var id = setTimeout(function () {
-            o._index = o._index + 1 > o.contents.size() ? 0 : o._index + 1;
+            o._index = o._index + 1 > o.contents.size() - 1 ? 0 : o._index + 1;
             o.prepare(o._index);
             autoslide(o);
         }, o.times);
