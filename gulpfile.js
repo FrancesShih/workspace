@@ -31,6 +31,16 @@ var widgetpath = 'widget/';
 var jspath_lib = ['assets/**/*.js'];
 var replacefilepath = 'output/template/**/*.html';
 
+var imagemin2 = require('gulp-imagemin'); 
+var imgsrc = 'assets/img/common1';
+var imgdst = 'output/assets/img/common1';
+
+gulp.task('imagemin', function(){     
+    return gulp.src('assets/img/common1/*.png')         
+    .pipe(imagemin2())         
+    .pipe(gulp.dest('output/assets/img/common1'));
+});
+
 // fn
 function getFolders (dir) {
     return fs.readdirSync(dir)
@@ -133,4 +143,4 @@ gulp.task('start:server', function () {
     })
 });
 // run task
-gulp.task('dev', ['compile:sass', 'compile:ejs', 'compile:js', 'replace:style', 'replace:script', 'compile:widget', 'cp:img','watch:file', 'start:server']);
+gulp.task('dev', ['compile:sass', 'compile:ejs', 'compile:js', 'replace:style', 'replace:script', 'compile:widget', 'cp:img','watch:file', 'imagemin', 'start:server']);
