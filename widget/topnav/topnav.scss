@@ -10,7 +10,8 @@
     position: relative;
     z-index: 2;
     div.subnav {
-        display: none;
+        visibility: hidden;
+        z-index: -1;
         position: absolute;
         width: 600px;
         padding: 25px;
@@ -95,12 +96,12 @@
     &:last-child {
         margin: 0;
     }
-    &:hover {
+    /* &:hover {
         div.subnav {
             display: block;
             @include crossprop(animation, opacityChange 300ms);
         }
-    }
+    } */
     > a {
         display:block;
         font-size: 16px;
