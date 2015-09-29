@@ -1,10 +1,33 @@
 /**
 *@file helpbar
 */
+@import  '../../assets/style/lib/skin.scss';
+
 #toolbar {
-    display: none;
     position: fixed;
-    border: 1px solid red;
     bottom: 30px;
     right: 30px;
+    width: 80px;
+    @include crossprop(perspective, 500); 
+    .tool {
+        width: 80px;
+        height: 60px;
+        padding-top: 20px;
+        margin-bottom: 1px;
+        cursor: pointer;
+        @include transproptime(background, 200ms);
+        
+    }
+    .tool:first-child {
+        background: rgba(229, 77, 68, 0.8);
+        &:hover {
+            background: rgba(229, 77, 68, 0.9);
+        }
+    }
+    .tool:nth-child(2) {
+        background: rgba(0, 0, 0, 0.3);
+        &:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
 }
