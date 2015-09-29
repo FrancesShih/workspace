@@ -16,12 +16,5 @@ define(function (require) {
     require('solution/init');
     /**公共组件init**/
     require('widget/topbar');
-    /**锚点滚动**/
-    var anchor = require('widget/anchor').anchor;
-    $(".gather-inline >li").click(function () {
-        var $this = $(this);
-        var name = $this.find("a").attr("data-anchor");
-        anchor({"duringtime": 500, "ele": name});
-    });
     
 });

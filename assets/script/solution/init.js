@@ -16,4 +16,12 @@ define(function (require, exports, module) {
 		$this.attr("src", name);
 	});
 
+	/**锚点滚动**/
+    var anchor = require('widget/anchor').anchor;
+    $(".gather-inline >li").click(function () {
+        var $this = $(this);
+        var name = $this.find("a").attr("data-anchor");
+        anchor({"duringtime": 500, "ele": name});
+    });
+
 });
