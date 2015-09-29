@@ -2,7 +2,7 @@
 *@file gulp
 */
 // require
-var pwd = process.env.PWD;
+var pwd = process.env.PWD || "E:/workspace/";
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 var ejs = require('gulp-ejs');

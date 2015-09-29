@@ -65,6 +65,14 @@ $skin-title-border: #ccc;
      transform:$pro;
 }
 
+@mixin linear-gradient($direction, $color-stops...) {
+    background: -moz-linear-gradient($direction, $color-stops);
+    background: -webkit-linear-gradient($direction, $color-stops);
+    background: -ms-linear-gradient($direction, $color-stops);
+    background: -o-linear-gradient($direction, $color-stops);
+    background: linear-gradient($direction, $color-stops);
+}
+
 //animate
 @keyframes opacityChange {
     0% {opacity: 0;}
