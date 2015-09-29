@@ -19,8 +19,11 @@ $bg-a: #fbeded;
 	display: block;
 	li {
 		width: 200px;
+		overflow: hidden;
         float: left;
         box-sizing: border-box;
+        border: 1px solid transparent;
+        @include crossprop(transition, border 150ms linear);
         text-align: center;
         color: $color;
         font-size: $font-size-b;
@@ -244,7 +247,7 @@ p {
 	.center {
 		text-align: center;
 		padding: 19px 0;
-		background: url("/assets/img/static/solution/bg-prom.png") no-repeat 0 0;
+		background: url("/assets/img/common/bg-prom.png") no-repeat 0 0;
 	}
 	span {
 		margin-right: 27px;
