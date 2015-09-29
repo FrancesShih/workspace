@@ -26,7 +26,6 @@ define(function (require, exports, module){
 
 		if (self.control.size() === 0) return false;
 		if (self.switching.size() === 0) return false;
-		if (self.switcwrap.size() === 0) return false;
 		if (self.item === 0) return false;
 
 		return true;

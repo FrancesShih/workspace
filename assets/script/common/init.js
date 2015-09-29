@@ -10,9 +10,12 @@ define(function (require, exports, module) {
     
     var widget = require('widget/slidebanner');
     var insslide = new widget.slide({
-        container: '.slidebanner .banner',
-        slide: '.slidebanner .banner > li',
-        handler: '.slidebanner .dot-index'
+        control: '.slidebanner .dot-index li',
+        controlwrap: '.slidebanner .dot-index',
+        contents: '.slidebanner .banner li',
+        contentwrap: '.slidebanner .banner',
+        item: $('.slidebanner').width(),
+        times: 10000
     });
 
 });

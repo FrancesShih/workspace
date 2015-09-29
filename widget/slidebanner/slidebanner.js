@@ -4,160 +4,107 @@
 */
 define(function (require, exports, module) {
     var $ = require('jquery');
+    var _id = 0;
+
+
+    function slidebanner(opt){
+        var self = this;
+
+        self.control = $(opt.control);
+        self.controlwrap = $(opt.controlwrap);
+        self.contents = $(opt.contents);
+        self.contentwrap = $(opt.contentwrap);
+        self.item = opt.item >> 0;
+        self.times = opt.times >> 0;
+
+        self.item = Math.max(self.item ,$('.wrap').width());
+
+        // 检查
+        if (!self.checkParams()) {
+            return false;
+        }
+        self.prepare().attEvt();
+    }
+
+    var pro = slidebanner.prototype;
     
-    function SlideBanner (opt) {
+    pro.checkParams = function () {
         var self = this;
-        // 检查参数
-        if (!self.checkparam(opt)) return;
-        // run
-        self.prepare(opt).run(); 
-    };    
-    
-    var sp = SlideBanner.prototype;
 
-    sp.checkparam = function (opt) {
-        var self = this;
-        var result = true;
-        var o = opt;
-        
-        if (!opt.container) result = false;
-        if (!opt.slide) result = false;
-        
-        return result;
-    };   
+        if (self.control.size() === 0) return false;
+        if (self.contents.size() === 0 || self.contents.size() === 1) return false;
+        if (self.item === 0) return false;
+        if (self.times === 0) return false;
 
-    sp.prepare = function (opt) {
-        var self = this;
-        // 三位可选配置
-        // 1. 是否有handler dot  2. 切换方向: top-1, right-2, bottom-3, left-4, default-0(不滚)   3. 添加切换时常 
-        self.conf = [];
-        self.container = $(opt.container);
-        self.slide = $(opt.slide);
-        self.handler = opt.handler ? $(opt.handler) : false;
-        self.dir = opt.dir ? opt.dir : 'left';
-        self.fits = opt.fits ? opt.fits : false;
-        // time - ms
-        self.animate = opt.animate ? opt.animate : 9500;
-        // handler
-        if (!self.handler) {
-            self.conf.push(0);
-        } else {
-            self.conf.push(1);
-        }
-        // dir
-        if (self.slide.size() > 1) {
-            switch (self.dir) {
-                case 'top': self.conf.push(1); break;
-                case 'right': self.conf.push(2); break;
-                case 'bottom': self.conf.push(3); break;
-                case 'left': self.conf.push(4); break;
-                default: self.conf.push(0); break;
-            }
-        } else {
-            self.conf.push(0);
-        }
-        // clip 请传效果数
-        self.conf.push(self.animate >> 0);
-       
-         return self;
-    };    
+        return true;
+    }
 
-    sp.run = function () {
+    pro.prepare = function (i) {
         var self = this;
-        // 轮询状态机 
-        for (var i = 0, len = self.conf.length; i < len; i++) {
-            self.stateRun(self.conf[i], i); 
-        }
+        var _index = i ? i : 0;
+        // 初始化
+        var controlwidth = -self.controlwrap.width()/2;
+        var size = self.contents.size();
+
+        self.controlwrap.css({
+            'margin-left': controlwidth + 'px',
+            'visibility': 'visible'
+        });
+        self.contentwrap.css({
+            'width': size * self.item + 'px',
+            'overflow': 'hidden',
+            'margin-left': -1 * _index * self.item + 'px'
+        });
+        self.contents.css({
+            'width': self.item + 'px',
+            'float': 'left'
+        });
+
+        self.control.removeClass('active').eq(_index).addClass('active');
+        self.contents.removeClass('active').eq(_index).addClass('active');
+
+        self._index = _index;
+
 
         return self;
-    };
-    
-    sp.stateRun = function (value, index) {
-        var _index = index >> 0;
+    }
+
+    pro.attEvt = function () {
         var self = this;
-        switch (_index) {
-            case 0 : dot(value, self); break;
-            case 1 : banner(value, self); break;
-            case 2 : switching(value, self); break;
-        } 
 
-    };
-    
-    function switching(v, o, index) {
-        var time = v,
-            c = o.container, 
-            s = o.slide,
-            h = o.handler,
-            _index = index ? index : 0,
-            maxsize = s.size(),
-            itemwidth = o.fits ? $('.wrap').eq(0).width() : window.innerWidth;
-       
-        // console.log(o.conf);
-        if (o.conf[2] === 0) return;
-
-        // 校正index
-        _index = _index >= maxsize ? 0 : _index;
-        
-        c.css({
-            'transform': 'translateX(' + -1 * _index * itemwidth + 'px)',
-            'transition': 'transform 500ms'
-        });
-        
-        s.removeClass('active').eq(_index).addClass('active');
-        
-        h.find('li').removeClass('active').eq(_index).addClass('active');
-        
-        _index = _index + 1;
-        
-        setTimeout(function () {
-            switching(time, o, _index);
-        }, time);
-    }
-    
-    function banner(v, obj) {
-        var dir = v >> 0,
-            c = obj.container,
-            s = obj.slide;
-        
-        switch (dir) {
-            case 4 : // 左侧
-                leftBanner(c, s, obj.fits);
-                break;
-        }
-    };
-    
-    function leftBanner(container, slide, fits) {
-        var c = container,
-            s = slide,
-            itemwidth = fits ? $('.wrap').eq(0).width() : window.innerWidth,
-            size = s.size();
-    
-        var maxwidth = itemwidth * size;
-
-        c.css({
-            'width': maxwidth + 'px',
-            'overflow': 'hidden'
-        });
-        
-        s.css({
-            'float': 'left',
-            'width': itemwidth + 'px'
-        }).eq(0).addClass('active');
-    };
-
-
-    function dot(v, obj) {
-        var o = obj.handler;
-        var maxwidth = o.width()/2;
-        var size = obj.slide.size();
-        if (v && size > 1) {
-            o.css({
-                'margin-left': -maxwidth + 'px',
-                'visibility': 'visible'
+        self.control.each(function (i) {
+            $(this).on('click', function () {
+                self.control.removeClass('active');
+                $(this).addClass('active');
+                self._index = i;
+                self.contentwrap.animate({
+                    'margin-left': -1 * self._index * self.item + 'px'
+                }, 300);
+                self.contents.removeClass('active').eq(i).addClass('active');
+                _id && clearTimeout(_id);
             });
-            o.find('li').eq(0).addClass('active');
-        }
+        });
+
+        $(window).on('resize', function() {
+            self.item = Math.max($('.slidebanner').width() ,$('.wrap').width());
+            self.prepare(self._index);
+        });
+
+        _id = autoslide(self);
+
+        return self;
     }
-   
-    exports.slide = SlideBanner; 
+
+    // 定时
+    function autoslide (object) {
+        var o = object;
+        var id = setTimeout(function () {
+            o._index = o._index + 1 > o.contents.size() ? 0 : o._index + 1;
+            o.prepare(o._index);
+            autoslide(o);
+        }, o.times);
+        return id;
+    }
+
+    exports.slide = slidebanner; 
 });
