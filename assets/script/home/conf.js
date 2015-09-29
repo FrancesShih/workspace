@@ -14,4 +14,6 @@ require.config({
 define(function (require) {
     /**不同页面init路径不同*/
     require('home/init');
+    /**widget公共引用*/
+    require('widget/footbar');
 });

@@ -8,6 +8,7 @@ define(function (require, exports, module) {
 				name.substring(0, name.indexOf(".png")) + "-hover.png": "";
 		$this.attr("src", name);
 	});
+	
 	$(".gather-inline >li").mouseleave(function () {
 		var $this = $(this).find("img");
 		var name = $this.attr("src");
