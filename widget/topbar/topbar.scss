@@ -109,13 +109,11 @@
     .ico-arr {
         background-position:left top;
     }
-    /*
     div.usr-info {
-        height: 260px;
-        @include transitionpro(height);
+        // height: 260px;
+        // @include transitionpro(height);
         @include crossprop(box-shadow, 1px 2px 2px rgba(0, 0, 0, 0.3));
     }
-    */
 }
 
 
