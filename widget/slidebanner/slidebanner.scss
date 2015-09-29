@@ -25,6 +25,7 @@
                 height: 720px;
                 img {
                     position: absolute;
+                    visibility: hidden;
                     &:first-child {
                         left: -80px;
                         top: 270px;
@@ -48,6 +49,7 @@
 .slidebanner .banner {
     li.active {
         img {
+            visibility: visible !important;
             &:first-child { @include crosspropex(animation, slidebanner 10s);}
             &:last-child { @include crosspropex(animation, islidebanner 10s);}
         }

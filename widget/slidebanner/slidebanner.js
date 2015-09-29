@@ -32,7 +32,11 @@ define(function (require, exports, module) {
         var self = this;
 
         if (self.control.size() === 0) return false;
-        if (self.contents.size() === 0 || self.contents.size() === 1) return false;
+        if (self.contents.size() === 0) return false;
+        if (self.contents.size() === 1) {
+            self.contents.eq(0).addClass('active');
+            return false;
+        }
         if (self.item === 0) return false;
         if (self.times === 0) return false;
 
