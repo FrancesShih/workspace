@@ -10,7 +10,7 @@
     bottom: 30px;
     right: 30px;
     width: 80px;
-    @include crossprop(perspective, 1000px);
+    @include crosspropex(perspective, 1000px);
     
     .tool {
         width: 80px;
@@ -19,8 +19,8 @@
         margin-bottom: 1px;
         cursor: pointer;
         @include transproptime(background, 200ms);
-        @include crossprop(transform-style, preserve-3d);
-        @include crossprop(transform-origin, 50% 0%); 
+        @include crosspropex(transform-style, preserve-3d);
+        @include crosspropex(transform-origin, 50% 0%); 
     }
     .tool:first-child {
         background: rgba(229, 77, 68, 0.8);
@@ -39,7 +39,7 @@
     visibility: visible;
     z-index: 10;
     .tool{
-        @include crossprop(animation, toolbarin 1000ms cubic-bezier(0.42, 0, 0.58, 1));
+        @include crosspropex(animation, toolbarin 1000ms cubic-bezier(0.42, 0, 0.58, 1));
     }
 }
 @keyframes toolbarin {
@@ -65,12 +65,6 @@
    33.3%{  -o-transform: rotateX(30deg);  }
    66.6%{  -o-transform: rotateX(-20deg);  }
    100%{  -o-transform: rotateX(0);  } 
-}
-@-ms-keyframes toolbarin {
-   0%{  -ms-transform: rotateX(-40deg);  }
-   33.3%{  -ms-transform: rotateX(30deg);  }
-   66.6%{  -ms-transform: rotateX(-20deg);  }
-   100%{  -ms-transform: rotateX(0);  } 
 }
 
 

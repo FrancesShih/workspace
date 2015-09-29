@@ -193,35 +193,35 @@
 }
 @-ms-keyframes slidebanner {
     0% {
-        -ms-transform: scale3d(1.05, 1.05, 1.05) translateX(600px);
+        -ms-transform: scale(1.05, 1.05) translate(600px, 0);
     }
     5% {
-        -ms-transform: scale3d(1.05, 1.05, 1.05) translateX(0);
+        -ms-transform: scale(1.05, 1.05) translate(0, 0);
     }
     95% {
-        -ms-transform: scale3d(1, 1, 1) translateX(0);   
+        -ms-transform: scale(1, 1) translate(0, 0);   
     }
     96% {
-        -ms-transform: scale3d(1, 1, 1) translateX(-600px);
+        -ms-transform: scale(1, 1) translate(-600px, 0);
     }
     100% {
-        -ms-transform: scale3d(1, 1, 1) translateX(-600px);
+        -ms-transform: scale(1, 1) translate(-600px, 0);
     }
 }
 @-ms-keyframes islidebanner {
     0% {
-        -ms-transform: scale3d(0.92, 0.92, 0.92) translateX(600px);
+        -ms-transform: scale(0.92, 0.92) translate(600px, 0);
     }
     7% {
-        -ms-transform: scale3d(0.92, 0.92, 0.92) translateX(0);
+        -ms-transform: scale(0.92, 0.92) translate(0, 0);
     }
     96% {
-        -ms-transform: scale3d(1, 1, 1) translateX(0);   
+        -ms-transform: scale(1, 1) translate(0, 0);   
     }
     97% {
-        -ms-transform: scale3d(1, 1, 1) translateX(-600px);
+        -ms-transform: scale(1, 1) translate(-600px, 0);
     }
     100% {
-        -ms-transform: scale3d(1, 1, 1) translateX(-600px);
+        -ms-transform: scale(1, 1) translate(-600px, 0);
     }
 }
