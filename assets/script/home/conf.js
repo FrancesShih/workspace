@@ -16,6 +16,7 @@ define(function (require) {
     require('home/init');
     /**widget公共引用*/
     require('widget/footbar');
+    require('widget/helpbar');
     var widget = require('widget/slidebanner');
     var insslide = new widget.slide({
         container: '.slidebanner .banner',
