@@ -240,10 +240,11 @@ p {
 	} 
 }
 .lottery {
-	background: url("/assets/img/solution/bg-huodong.png") no-repeat 0 0;
-	padding: 19px 0;
+	@include linear-gradient(right, #d94646, #db3a33);
 	.center {
 		text-align: center;
+		padding: 19px 0;
+		background: url("/assets/img/solution/bg-lottery.png") no-repeat 0 0;
 	}
 	span {
 		margin-right: 27px;
