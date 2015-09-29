@@ -27,7 +27,7 @@ $bg-a: #fbeded;
         text-align: center;
         color: $color;
         font-size: $font-size-b;
-        margin: 30px 0 50px 0;
+        margin: 57px 0 77px;
         &:first-child {
             margin-left: 100px;
             .border{
@@ -40,7 +40,7 @@ $bg-a: #fbeded;
         a {
         	display: block;
         	box-sizing: border-box;
-        	padding: 50px 0;
+        	padding: 25px 0 20px;
 	        img {
 	        	display: block;
 	        	margin: 0 auto;
@@ -217,7 +217,6 @@ p {
 				img {
 					width: 128px;
 					height: 96px;
-					margin: 10px 0;
 				}
 			}
 			&:nth-of-type(2n) {
