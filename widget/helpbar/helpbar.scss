@@ -10,7 +10,7 @@
     bottom: 30px;
     right: 30px;
     width: 80px;
-    @include crossprop(perspective, 2500px);
+    @include crossprop(perspective, 1000px);
     
     .tool {
         width: 80px;
@@ -43,32 +43,32 @@
     }
 }
 @keyframes toolbarin {
-   0%{  transform: rotateX(-60deg);  }
-   33.3%{  transform: rotateX(45deg);  }
+   0%{  transform: rotateX(-40deg);  }
+   33.3%{  transform: rotateX(30deg);  }
    66.6%{  transform: rotateX(-20deg);  }
    100%{  transform: rotateX(0);  } 
 }
 @-webkit-keyframes toolbarin {
-   0%{  -webkit-transform: rotateX(-60deg);  }
-   33.3%{  -webkit-transform: rotateX(45deg);  }
+   0%{  -webkit-transform: rotateX(-40deg);  }
+   33.3%{  -webkit-transform: rotateX(30deg);  }
    66.6%{  -webkit-transform: rotateX(-20deg);  }
    100%{  -webkit-transform: rotateX(0);  } 
 }
 @-moz-keyframes toolbarin {
-   0%{  -moz-transform: rotateX(-60deg);  }
-   33.3%{  -moz-transform: rotateX(45deg);  }
+   0%{  -moz-transform: rotateX(-40deg);  }
+   33.3%{  -moz-transform: rotateX(30deg);  }
    66.6%{  -moz-transform: rotateX(-20deg);  }
    100%{  -moz-transform: rotateX(0);  } 
 }
 @-o-keyframes toolbarin {
-   0%{  -o-transform: rotateX(-60deg);  }
-   33.3%{  -o-transform: rotateX(45deg);  }
+   0%{  -o-transform: rotateX(-40deg);  }
+   33.3%{  -o-transform: rotateX(30deg);  }
    66.6%{  -o-transform: rotateX(-20deg);  }
    100%{  -o-transform: rotateX(0);  } 
 }
 @-ms-keyframes toolbarin {
-   0%{  -ms-transform: rotateX(-60deg);  }
-   33.3%{  -ms-transform: rotateX(45deg);  }
+   0%{  -ms-transform: rotateX(-40deg);  }
+   33.3%{  -ms-transform: rotateX(30deg);  }
    66.6%{  -ms-transform: rotateX(-20deg);  }
    100%{  -ms-transform: rotateX(0);  } 
 }

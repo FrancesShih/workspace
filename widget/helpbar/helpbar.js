@@ -11,7 +11,6 @@ define(function (require, exports, module){
 
     $(window).on('scroll', function (e) {
         if (g.scrollY > 600 && !toolbar.hasClass('active')) {
-            console.log('###');
             toolbar.addClass('active');
         }
         if (g.scrollY < 800) {
@@ -20,7 +19,7 @@ define(function (require, exports, module){
     });
     
     service.on('click', function () {
-        window.open('http://chat32.live800.com/live800/chatClient/chatbox.jsp?companyID=462131&configID=56872&jid=1949975560&enterurl=http%3A%2F%2Fwww.ksyun.com%2F&skillId=3823&pagetitle=%E9%87%91%E5%B1%B1%E4%BA%91%E5%AE%98%E7%BD%91&pagereferrer=http%3A%2F%2Fwww%2Eksyun%2Ecom%2F&firstEnterUrl=http%3A%2F%2Fwww%2Eksyun%2Ecom%2F&lan=zh');
+        window.open('http://chat32.live800.com/live800/chatClient/chatbox.jsp?companyID=462131&configID=56872&jid=1949975560&enterurl=http%3A%2F%2Fwww.ksyun.com%2F&skillId=3823&pagetitle=%E9%87%91%E5%B1%B1%E4%BA%91%E5%AE%98%E7%BD%91&pagereferrer=http%3A%2F%2Fwww%2Eksyun%2Ecom%2F&firstEnterUrl=http%3A%2F%2Fwww%2Eksyun%2Ecom%2F&lan=zh', '_blank', 'height=600,width=600,scrollbars=no');
     });    
     
     sTop.on('click', function () {
