@@ -5,6 +5,9 @@ footer {
    background: $skin-foot;
    color: $color-foot;
    padding: 40px 0;
+   .wrap {
+        position: relative;
+   }
    a {
         color: $color-foot-link;
         display: block;
@@ -13,15 +16,89 @@ footer {
             color: $color-foot;
         }
     }
+   span , li{
+        color: $color-foot-link;
+   }
    h4 {
         font-size: 16px;
         padding-bottom: 20px;     
    }
    .wrap:first-child {
-        border-bottom: 1px solid $skin-foot-sp; 
+        padding-bottom: 50px;
    }
+   .sp-line {
+        border-bottom: 1px solid $skin-foot-sp; 
+    }
    .site-cp {
         color: $color-cp;
         font-size: 12px;
+        padding: 30px 0 40px 0;
+        line-height: 1.75em;
+    }
+   .site-vip {
+        position: absolute;
+        right: 0;
+        top: 25px;
+        img {
+            &:first-child {
+                border-right: 1px solid $skin-foot-sp;
+                margin-right: 20px;
+                padding-right: 20px;
+            }
+        }
    }
+   .col-5 {
+        width: 18.5%;
+        &:nth-child(5) {
+            width: 25%;
+            img {
+                position: relative;
+                top: 3px;
+                margin-right: 3px;
+            }
+        }
+   }
+   .ks-site {
+        padding-bottom: 20px;
+        position: relative;
+        height: 120px;
+        ul {
+            position: absolute;
+            right: 0;
+            top: 10px;
+        }
+        li {
+            position: relative;
+            cursor: pointer;
+            padding: 10px 0;
+            &:first-child {
+                border-bottom: 1px solid $skin-foot-sp;
+            }
+        }
+        li.active {
+            color: $color-foot;
+        }
+        li.active:after {
+            content: "";
+            width: 9px;
+            height: 16px;
+            position: absolute;
+            left: -13px;
+            top: 10px;
+            background: url('/assets/img/common/ico-arrow-right.png') left top no-repeat;
+        }
+        .code {
+            background: $skin-light;
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            width: 105px;
+            height: 115px;
+            text-align: center;
+            img {
+                margin: 3px 0;
+            }
+        }
+    }
 }

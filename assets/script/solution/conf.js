@@ -15,7 +15,7 @@ define(function (require) {
     /**不同页面init路径不同*/
     require('solution/init');
     /**公共组件init**/
-    require('widget/topbar');
+    require('widget/footbar');
     /**锚点滚动**/
     var anchor = require('widget/anchor').anchor;
     $(".gather-inline >li").click(function () {
