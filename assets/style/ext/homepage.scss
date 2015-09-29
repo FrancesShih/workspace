@@ -402,6 +402,11 @@
         .banner {
             padding-left: 8px;
         }
+        li {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
     }
 }
 
