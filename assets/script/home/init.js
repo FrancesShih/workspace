@@ -3,14 +3,16 @@
 */
 define(function (require, exports, module) {
     var $ = require('jquery');
-    var widget = require('widget/slidebanner');
-    
-    var insslide2 = new widget.slide({
-        container: '.showcase .showcase-banner',
-        slide: '.showcase .showcase-banner > li',
-        handler: '.showcase .showcase-tab',
-        fits: true
+
+    // tab切换
+    var widget = require('widget/tabslt');
+    var instabslt = new widget.tabslt({
+        'control': '.showcase-tab li',
+        'switching': '.showcase-banner li',
+        'switcwrap': '.showcase-banner',
+        'item': $('.wrap').width()
     });
+    
 
     // 滚动
     var g = window;
