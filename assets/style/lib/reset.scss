@@ -15,6 +15,9 @@ body {
     text-align: center;
     -webkit-text-size-adjust: none;
     font: $font;
+    > div {
+        overflow: hidden;
+    }
 }
 .wrap {
     width: 1000px;
