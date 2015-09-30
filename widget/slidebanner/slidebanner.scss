@@ -101,6 +101,28 @@
         transform: scale3d(1, 1, 1) translateX(0);
     }
 }
+@-webkit-keyframes slidebanner {
+    0% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05) translateX(600px);
+    }
+    6% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05) translateX(0);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1) translateX(0);
+    }
+}
+@-webkit-keyframes islidebanner {
+    0% {
+        -webkit-transform: scale3d(0.92, 0.92, 0.92) translateX(600px);
+    }
+    9% {
+        -webkit-transform: scale3d(0.92, 0.92, 0.92) translateX(0);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1) translateX(0);
+    }
+}
 @-moz-keyframes slidebanner {
     0% {
         -moz-transform: scale3d(1.05, 1.05, 1.05) translateX(600px);
