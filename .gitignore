@@ -7,5 +7,7 @@ output/**/*.js
 
 output/**/*.png
 
+output/**/*.ejs
+
 *.swp
 
