@@ -114,7 +114,7 @@ gulp.task('compile:widget', ['replace:script'], function () {
 });
 
 gulp.task('cp:img', function () {
-    gulp.src('assets/img/**/*.png')
+    gulp.src(['assets/img/**/*.png', 'assets/img/**/*.ico'])
         .pipe(gulp.dest('output/assets/img'));
 });
 
