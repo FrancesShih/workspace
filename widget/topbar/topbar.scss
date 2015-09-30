@@ -5,6 +5,10 @@
     color: $color-light;
     height: 34px;
 }
+.topbar .wrap > ol {
+    float: right;
+    width: 500px;
+}
 .topbar .wrap > ol li {
     line-height: 34px;
     padding: 0 20px;

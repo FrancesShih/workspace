@@ -3,6 +3,7 @@
  *include resetcss & common frame
  *defualt skin
 */
+
 @import 'skin.scss';
 
 // resets
@@ -11,7 +12,8 @@
     padding: 0;
 }
 body {
-    text-align:center;
+    text-align: center;
+    -webkit-text-size-adjust: none;
     font: $font;
 }
 .wrap {

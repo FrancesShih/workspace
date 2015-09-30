@@ -3,6 +3,10 @@
 */
 @import '../lib/skin.scss';
 
+.promlink ol {
+    float: left;
+    width: 100%;
+}
 .promlink li {
     float: left;
     width: 33%;
@@ -100,6 +104,9 @@
         }
     }
     .round-inline {
+        overflow: visible;
+        float: left;
+        width: 100%;
         + .clearfix {
             margin-bottom: -50px;
         }
@@ -377,6 +384,8 @@
         }    
     }
     .co-link {
+        float: left;
+        width: 100%;
         li {
             float: left;
             font-size: 20px;
@@ -409,7 +418,10 @@
         }
     }
 }
-
+.promvip ol {
+    float: left;
+    width: 100%;
+}
 .promvip li {
     color: $color-light;
     float: left;

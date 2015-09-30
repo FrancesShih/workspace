@@ -56,6 +56,7 @@ define(function (require, exports, module) {
         });
         self.contentwrap.css({
             'width': size * self.item + 'px',
+            'float': 'left',
             'overflow': 'hidden',
             'margin-left': -1 * _index * self.item + 'px'
         });
