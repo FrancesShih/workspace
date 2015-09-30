@@ -36,7 +36,8 @@ define(function (require, exports, module){
 
 		self.control.eq(0).addClass('active');
 		self.switcwrap.css({
-			'width': self.item * size + 'px'
+			'width': self.item * size + 'px',
+			'float': 'left'
 		});
 		self.switching.css({
 			'float': 'left',

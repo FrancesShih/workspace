@@ -46,6 +46,8 @@
     }
     .sq-inline {
         overflow: hidden;
+        float: left;
+        width: 100%;
         background: url('/assets/img/static/home/bg-sqinline.png') left top no-repeat;
         li {
             float: left;
