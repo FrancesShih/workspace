@@ -3,3 +3,152 @@
 */
 @import '../lib/skin.scss';
 
+$color-intro-list: #5a3f3f;
+$color-highlight-pro: #ff6600;
+$skin-tab-default: #f0f0f0;
+$color-tab-default: #808080;
+
+#page-bd .wrap {
+    padding: 45px 0 115px;
+}
+.col-l {
+    float: left;
+    width: 212px;
+    h3 {
+        font-size: 12px;
+        font-weight: normal;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    li a {
+        color: $color-des;
+        font: 14px;
+        line-height: 2.5em;
+        @include transitionpro(color);
+        span.ico {
+            margin-right: 10px;
+            position: relative;
+            top: 4px;
+        }
+        &:hover {
+            color: $color-highlight;
+        }
+    }
+    li.active a{
+        color: $color-highlight;
+    }
+}
+.col-r {
+    float: right;
+    width: 767px;
+    border-left: 1px solid $skin-border;
+    padding: 0 0 85px 20px;
+    .pro-intro {
+        position: relative;
+        padding-left: 250px;
+        height: 266px;
+        margin-bottom: 60px;
+        img.intro-img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 218px;
+            height: 266px;
+        }
+        h1 {
+            font-size: 34px;
+            font-weight: normal;
+            line-height: 34px;
+            padding-bottom: 25px;
+        }
+        p {
+            color: $color-des;
+            font-size: 12px;
+            line-height: 2em;
+        }
+        li {
+            color: $color-intro-list;
+            background: url('/assets/img/common/ico-tick.png') left center no-repeat;
+            padding-left: 30px;
+            font-size: 12px;
+            line-height: 2.5em;
+            margin-top: 9px;
+        }
+        strong {
+            color: $color-highlight-pro;
+            font-size: 40px;
+            line-height: 40px;
+            position: relative;
+            top: 10px;
+            margin-left: 15px;
+            span {
+                font-size: 16px;
+            }
+        }
+    }
+    .tab {
+        float: left;
+        width: 100%;
+        border-bottom: 1px solid $skin-title-border;
+        margin-bottom: 45px;
+        li {
+            float: left;
+            cursor: pointer;
+            padding: 10px 30px;
+            border: 1px solid $skin-tab-default;
+            background: $skin-tab-default;
+            color: $color-tab-default;
+            @include crossprop(border-top-left-radius, 3px);
+            @include crossprop(border-top-right-radius, 3px);
+            margin-right: 10px;
+            @include transitionpro(background);
+        }
+        li.active, li:hover {
+            background: $skin-light;
+            color: $color-highlight;
+            padding-bottom: 13px;
+            margin-bottom: -3px;
+            border: 1px solid $skin-title-border;
+            border-bottom: 0;
+        }
+    }
+    h2 {
+        font-size: 20px;
+        font-weight: normal;
+        border-left: 5px solid $skin-highlight;
+        padding-left: 12px;
+        line-height: 20px;
+        clear: both;
+        margin: 45px 0;
+    }
+
+}
+.intro-pay {
+    position: absolute;
+    bottom: 0;
+    left: 250px;
+    right: 0;
+    .ico-vip {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        color: $color-highlight-pro;
+        font-size: 12px;
+        background: url('/assets/img/common/ico-pro-vip.png') left center no-repeat;
+        padding-left: 25px;
+    }
+}
+.btn {
+    display: inline-block;
+    background: $skin-highlight;
+    @include crossprop(border-radius, 3px);
+    color: $color-light;
+    padding: 10px 30px;
+    @include transproptime(background, 200ms);
+    &:hover {
+        background: #d81b1b;
+    }
+}
