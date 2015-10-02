@@ -11,3 +11,5 @@ output/**/*.ejs
 
 *.swp
 
+
+output/assets/img/static/favicon.ico
