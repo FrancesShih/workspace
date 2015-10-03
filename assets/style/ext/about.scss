@@ -5,6 +5,12 @@
 
 $skin-page-bg: #f7f7f7;
 $color-sns: #8692b5;
+$color-news: #464646;
+$color-date: #797979;
+$color-page: #9c9c9c;
+$skin-list-border: #ececec;
+$skin-page: #f3f3f3;
+$skin-page-dark: #4d4d4d;
 
 #page-bd {
     background: $skin-page-bg;
@@ -21,6 +27,7 @@ $color-sns: #8692b5;
     width: 790px;
     background: $skin-light;
     padding: 30px 20px;
+    min-height: 800px;
 }
 h2.title {
     font-size: 24px;
@@ -99,5 +106,57 @@ p {
             display: block;
             margin-top: 15px;
         }
+    }
+}
+.newslist {
+    li {
+        padding: 30px 0;
+        position: relative;
+        border-bottom: 1px solid $skin-list-border;
+
+        span {
+            color: $color-date;
+            position: absolute;
+            right: 0;
+            top: 40px;
+        }
+    }
+    a {
+        font-size: 24px;
+        color: $color-news;
+        text-overflow: ellipsis;
+        display: block;
+        width: 600px;
+        white-space: nowrap;
+        overflow: hidden;
+        @include transitionpro(color);
+        &:hover {
+            color: $color-link-hover;
+        }
+    }
+}
+.pages {
+    text-align: center;
+    margin-top: 70px;
+    color: $color-page;
+    ol {
+        display: inline-block;
+    }
+    li {
+        background: $skin-page;
+        padding: 9px 13px;
+        display: inline-block;
+        cursor: pointer;
+        line-height: 1em;
+        &:hover {
+            color: $color-highlight;
+        }
+    }
+    li.active {
+        background: $skin-page-dark;
+        color: $color-light;
+    }
+    strong {
+        margin-left: 20px;
     }
 }
