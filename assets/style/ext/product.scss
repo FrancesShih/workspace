@@ -7,6 +7,12 @@ $color-intro-list: #5a3f3f;
 $color-highlight-pro: #ff6600;
 $skin-tab-default: #f0f0f0;
 $color-tab-default: #808080;
+$color-fn: #df4139;
+$skin-case-border: #d9d9d9;
+$skin-case-bg: #fafafa;
+$skin-case-hover: #eee;
+$skin-pro-conf: #dadada;
+$skin-pro-conf-border: #b5b5b5;
 
 #page-bd .wrap {
     padding: 45px 0 115px;
@@ -121,10 +127,38 @@ $color-tab-default: #808080;
         border-left: 5px solid $skin-highlight;
         padding-left: 12px;
         line-height: 20px;
-        clear: both;
         margin: 45px 0;
+        clear: both;
     }
-
+}
+.pro-des {
+    position: relative;
+    padding-right: 160px;
+    float: left;
+    width: 223px;
+    margin-bottom: 34px;
+    &:nth-child(2n) {
+        clear: left;
+    }
+    h4 {
+        display: inline-block;
+        border-bottom: 1px solid $skin-title-border;
+        padding-bottom: 5px;
+        font-weight: normal;  
+    }
+    img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 145px;
+        height: 100px;
+    }
+    p {
+        color: $color-des;
+        font-size: 12px;
+        line-height: 2em;
+        margin-top: 15px;
+    }
 }
 .intro-pay {
     position: absolute;
@@ -139,6 +173,152 @@ $color-tab-default: #808080;
         font-size: 12px;
         background: url('/assets/img/common/ico-pro-vip.png') left center no-repeat;
         padding-left: 25px;
+    }
+}
+.functional {
+    float: left;
+    width: 100%;
+    li {
+        float: left;
+        width: 125px;
+        margin-right: 80px;
+        margin-bottom: 60px;
+        text-align: center;
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
+        &:nth-child(4n+1) {
+           clear: both;
+        }
+        &:hover img{
+            @include transformpropmix(scale(1.05, 1.05));
+            @include transproptime(transform, 200ms);
+        }
+    }    
+    img {
+        display: block;
+    }
+    h5 {
+        font-size: 16px;
+        color: $color-fn;
+        font-weight: normal;
+        padding: 15px 0;
+        line-height: 1em;
+    }
+    p {
+        font-size: 12px;
+        color: $color-des;
+    }
+}
+.showcase {
+    float: left;
+    width: 100%;
+    margin-bottom: 45px;
+    li {
+        float: left;
+        width: 138px;
+        height: 58px;
+        border: 1px solid $skin-case-border;
+        background: $skin-case-bg;
+        overflow: hidden;
+        margin-right: 15px;
+        @include transitionpro(background);
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            background: $skin-case-hover; 
+        }
+        img {
+            width: 138px;
+            height: 58px;
+        } 
+    }
+}
+.pro-conf {
+    float: left;
+    width: 100%;
+    margin-bottom: 45px;
+    li {
+        float: left;
+        width: 118px;
+        padding: 30px 50px 20px;
+        margin-right: 52px;
+        border: 1px solid  $skin-pro-conf;
+        text-align: center;
+        @include transproptime(border, 200ms);
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            border: 1px solid $skin-highlight;
+        }
+    }
+    h4 {
+        font-size: 22px;
+        font-weight: normal;
+        color:  $color-des;
+    }
+    strong {
+        color: $color-highlight-pro;
+        font-size: 42px;
+        display: block;
+        border-bottom: 1px solid $skin-pro-conf-border; 
+        span {
+            font-size: 24px;
+        }
+    }
+    dl {
+        float: left;
+        width: 100%;
+        line-height: 2em;
+        margin-top: 15px;
+        margin-bottom: 35px;
+        dt {
+            float: right;
+            width: 50%;
+            color: $color-des;
+        }
+        dd {
+            float: left;
+            width: 50%;
+        }
+    }
+    .btn {
+        background: $skin-light;
+        color: $color-highlight;
+        border: 1px solid $skin-highlight;
+        &:hover {
+            color: $color-light;
+        }
+    }
+}
+.pro-file {
+    float: left;
+    width: 100%;
+    h5 {
+        font-size: 16px;
+        font-weight: normal;
+        color: $color-des;
+        padding-bottom: 25px;
+    }
+    li {
+        width: 240px;
+        margin-right: 10px;
+        float: left;
+        &:last-child {
+            margin: 0;
+        }
+    }
+    a {
+        display: block;
+        font-size: 12px;
+        color: $color-btn;
+        line-height: 2em;
+        @include transitionpro(color);
+        &:hover {
+            color: $color-link-hover;
+        }
     }
 }
 .btn {
