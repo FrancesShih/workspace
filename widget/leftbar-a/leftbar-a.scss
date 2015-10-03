@@ -10,6 +10,15 @@ $color-a-sec: #aaa;
 $skin-a-sec: #303030;
 
 .menu {
+    ol {
+        overflow: hidden;
+        position: absolute;
+        visibility: hidden;
+    }
+    .active ol {
+        position: static;
+        visibility: visible;
+    }
     > li {
         > a{
             font-size: 16px;
@@ -18,9 +27,6 @@ $skin-a-sec: #303030;
             &:hover {
                 background: $skin-highlight;
             }
-        }
-        > ol {
-            display: none;
         }
         > ol > li > a {
             background: $skin-li-sec;
@@ -39,9 +45,6 @@ $skin-a-sec: #303030;
     > li.active {
         > a{
             background: $skin-highlight;
-        }
-        > ol {
-            display: block;
         }
     }
 
