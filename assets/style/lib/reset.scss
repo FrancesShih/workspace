@@ -54,6 +54,27 @@ img {
             font-size: 18px;
         }
     }
+    span.vip {
+        margin-right: 27px;
+        text-align: center;
+        font-size: 28px;
+        color: $color-light;
+    }
+    a.vip {
+        padding: 9px 26px;
+        @include crossprop(border-radius, 3px);
+        @include crossprop(transition, background 150ms linear); 
+        color: $color;
+        font-size: 18px;
+        background: #fbeded;
+        text-decoration: none;
+        &:hover{
+            background: $skin-light;
+        }
+    }
+    .center {
+        padding: 19px 0;
+    }
 }
 
 //animate
@@ -100,4 +121,9 @@ img {
 .col-5 {
     float: left;
     width: 20%;
+}
+
+// text-align
+.center {
+    text-align: center;
 }

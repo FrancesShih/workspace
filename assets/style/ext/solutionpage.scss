@@ -241,30 +241,4 @@ p {
 		}
 	} 
 }
-.lottery {
-	background: #dc353b;
-	.center {
-		text-align: center;
-		padding: 19px 0;
-		background: url("/assets/img/common/bg-prom.png") no-repeat 0 0;
-	}
-	span {
-		margin-right: 27px;
-		text-align: center;
-		font-size: $font-size-d;
-		color: $color-light;
-	}
-	a {
-		padding: 9px 26px;
-		@include crossprop(border-radius, 3px);
-		@include crossprop(transition, background 150ms linear); 
-		color: $color;
-		font-size: $font-size-a;
-		background: $bg-a;
-		text-decoration: none;
-		&:hover{
-			background: $skin-light;
-		}
-	}
-}
 
