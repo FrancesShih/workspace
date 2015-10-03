@@ -4,8 +4,53 @@
 
 @import  '../../assets/style/lib/skin.scss';
 
+$skin-li-top: #4d4d4d;
+$skin-li-sec: #373737;
+$color-a-sec: #aaa;
+$skin-a-sec: #303030;
+
 .menu {
-        
+    > li {
+        > a{
+            font-size: 16px;
+            background: $skin-li-top;
+            color: $color-light;
+            &:hover {
+                background: $skin-highlight;
+            }
+        }
+        > ol {
+            display: none;
+        }
+        > ol > li > a {
+            background: $skin-li-sec;
+            color: $color-a-sec;
+            font-size: 14px;
+            &:hover {
+                background: $skin-a-sec; 
+                color: $color-highlight;
+            }
+        }
+        > ol > li.active > a {
+            background: $skin-a-sec; 
+            color: $color-highlight;
+        }
+    }
+    > li.active {
+        > a{
+            background: $skin-highlight;
+        }
+        > ol {
+            display: block;
+        }
+    }
+
+    a {
+        display: block;
+        padding: 20px 45px;
+        line-height: 1em;
+        @include transitionpro(background);
+    }        
 
 }
 
