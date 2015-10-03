@@ -3,3 +3,101 @@
 */
 @import '../lib/skin.scss';
 
+$skin-page-bg: #f7f7f7;
+$color-sns: #8692b5;
+
+#page-bd {
+    background: $skin-page-bg;
+    .wrap:first-child {
+        padding-top: 25px;
+    }
+}
+.col-l {
+    float: left;
+    width: 160px;
+}
+.col-r {
+    float: right;
+    width: 790px;
+    background: $skin-light;
+    padding: 30px 20px;
+}
+h2.title {
+    font-size: 24px;
+    font-weight: normal;
+    border-left: 5px solid $skin-highlight;
+    padding-left: 20px;
+    line-height: 1em;
+    margin-bottom: 25px;
+    &:nth-of-type(2) {
+        margin-top: 25px;
+    }
+}
+p {
+    color: $color-des;
+    line-height: 1.75em;
+    padding: 0 20px 20px;
+}
+
+.contact {
+    color: $color-des;
+    line-height: 1.75em;
+    margin-bottom: 25px;
+    position: relative;
+    img {
+        position: absolute;
+        width: 402px;
+        height: 274px;
+        right: 0;
+        top: 0;
+    }
+    li {
+        padding: 0 0 30px 40px;
+        &:first-child {
+            background: url('/assets/img/common/ico-ip.png') 20px 3px no-repeat;
+        }
+        &:nth-child(2) {
+            background: url('/assets/img/common/ico-tel-about.png') 20px 4px no-repeat;
+        }
+        &:last-child {
+            background: url('/assets/img/common/ico-service-about.png') 20px 4px no-repeat;
+        }
+        span {
+            display: block;
+            font-size: 18px;
+            color: $color-highlight;
+        }
+        .btn {
+            display: block;
+            width: 125px;
+            text-align: center;
+            border: 1px solid $skin-highlight;
+            color: $color-highlight;
+            margin-top: 5px;
+            @include transitionpro(background);
+            &:hover {
+                background: $skin-highlight;
+                color: $color-light;
+            }
+        }
+    }
+}
+.sns {
+    float: left;
+    width: 600px;
+    color: $color-sns;
+    padding-left: 20px;
+    li {
+        float: left;
+        width: 120px;
+        img:first-child {
+           position: relative;
+           top: 6px;
+           margin-right: 10px;
+        }
+        img:last-child {
+            display: block;
+            margin-top: 15px;
+        }
+    }
+}
