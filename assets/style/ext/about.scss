@@ -29,6 +29,7 @@ $skin-page-dark: #4d4d4d;
     padding: 30px 20px;
     min-height: 800px;
 }
+// about us
 h2.title {
     font-size: 24px;
     font-weight: normal;
@@ -45,7 +46,6 @@ p {
     line-height: 1.75em;
     padding: 0 20px 20px;
 }
-
 .contact {
     color: $color-des;
     line-height: 1.75em;
@@ -108,6 +108,9 @@ p {
         }
     }
 }
+
+
+// newslist
 .newslist {
     li {
         padding: 30px 0;
@@ -160,3 +163,68 @@ p {
         margin-left: 20px;
     }
 }
+
+// newscontent
+.content {
+    padding-top: 30px;
+    >.wrap {
+        background: $skin-light;
+        padding: 30px 50px;
+        width: 900px;
+    }
+}
+.breadthumb {
+    border-bottom: 1px solid $skin-list-border;
+    padding-bottom: 20px;
+    ol {
+        float: left;
+        width: 500px;
+        background: url('/assets/img/common/ico-btn-back.png') left center no-repeat;
+        padding-left: 30px;
+        li {
+            float: left;
+            padding: 0 5px;
+            color: $color-news;
+        }
+    }
+    a {
+        margin-right: 5px;
+        color: $color-news;
+    }
+}
+.contents {
+    min-height: 800px;
+    hgroup {
+        padding: 40px 0;
+        position: relative;
+        h1 {
+            font-size: 24px;
+            line-height: 1em;
+            text-align: center;
+            color: $color-news;
+            font-weight: normal;
+            padding-bottom: 35px;
+        }
+        span.date, span.share {
+            color: $color-date;
+        }
+        span.share {
+            position: absolute;
+            right: 0;
+            bottom: 38px;
+            display: block;
+            width: 225px;
+            span {
+                float: left;
+            }
+            #btn-share {
+                float: left;
+            }
+        }
+    }
+    article p {
+        padding: 0 0 20px;
+    }
+}
+
+
