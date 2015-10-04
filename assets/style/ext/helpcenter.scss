@@ -3,3 +3,186 @@
 */
 @import '../lib/skin.scss';
 
+$color-helpcenter: #464646;
+$color-helplight: #747474;
+$skin-form-border: #ff7b1a;
+$skin-btn-hover: #ff9b1a;
+$skin-li-border: #cdcdcd;
+$skin-info-border: #dcdcdc;
+
+#page-bd .wrap {
+    padding-top: 50px;
+    color: $color-helpcenter;
+}
+
+.col-l {
+    width: 765px;
+    float: left;
+
+    dl {
+        float: left;
+        width: 100%;
+        line-height: 2.25em;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        dt {
+            font-size: 16px;
+            font-weight: bold;
+            float: left;
+            width: 140px;
+            padding: 12px 0 12px 25px;
+            clear: both;
+        }
+        dd {
+            float: left;
+            width: 600px;
+            a {
+                display: block;
+                float: left;
+                width: 200px;
+                padding: 12px 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                color: $color-helpcenter;
+                @include transitionpro(color);
+                &:hover {
+                    color: $color-link-hover;
+                }
+            }
+        }
+    }
+}
+
+.col-r {
+    float: right;
+    width: 215px;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 1em;
+    font-weight: normal;
+    padding-bottom: 45px;
+}
+
+form.helpsrc {
+    border: 2px solid $skin-form-border;
+    height: 44px;
+    width: 645px;
+    position: relative;
+    input[type="text"] {
+        line-height: 44px;
+        border: 0;
+        padding: 0 10px;
+        font-size: 14px;
+        width: 510px;
+        outline: 0;
+    }
+    button {
+        border: 0;
+        background: $skin-form-border;
+        color: $color-light;
+        text-align: center;
+        width: 117px;
+        position: absolute;
+        top: -2px;
+        bottom: -2px;
+        right: -2px;
+        font-size: 20px;
+        outline: 0;
+        cursor: pointer;
+        @include transproptime(background, 200ms);
+        &:hover {
+            background: $skin-btn-hover;
+        }
+    }
+}
+.hotword {
+    font-size: 16px;
+    padding: 15px 0;
+    color: $color-helplight;
+}
+
+h2.title {
+    font-size: 24px;
+    font-weight: normal;
+    border-left: 5px solid $skin-highlight;
+    padding-left: 20px;
+    line-height: 1em;
+    margin-top: 45px;
+    clear: both; 
+}
+.tab {
+   padding: 30px 0;
+   ol {
+        float: left;
+        width: 100%;
+        li {
+            padding: 0 30px;
+            line-height: 1em;
+            border-right: 1px solid $skin-li-border;
+            float: left;
+            cursor: pointer;
+            @include transitionpro(color);
+            &:hover {
+                color:  $color-highlight;
+            }
+            &:last-child {
+                border-right: 0;
+            }
+        }
+        li.active {
+            color: $color-highlight;
+        }
+    } 
+}
+.tabcontent {
+    padding-bottom: 40px;
+    overflow: hidden;
+    ol {
+       height: 106px;
+       overflow: hidden;
+       li {
+            float:left;
+            text-align: center;
+            img {
+                display: block;
+            }
+       }
+    }
+}
+
+.info {
+    border: 1px solid $skin-info-border;
+    border-top: 2px solid $skin-highlight;
+    padding: 15px 10px;
+    margin-bottom: 30px;
+    &:first-child {
+        a {
+            color: $color-link-hover;
+        }
+    }
+    &:nth-child(2), &:nth-child(3) {
+        li {
+            background: url('/assets/img/static/helpcenter/ico-list-helpcenter.png') 0 13px no-repeat;
+        }
+    }
+    h4 {
+        font-size: 22px;
+        line-height: 1em;
+        font-weight: normal;
+        padding:0 10px 10px;
+    }
+    li {
+        line-height: 2em;
+        padding: 0 10px;
+        a {
+           color: $color-helpcenter;
+           @include transitionpro(color);
+        }
+        a:hover {
+            color: $color-link-hover;
+        }
+    }
+}
