@@ -10,11 +10,37 @@ $skin-btn-hover: #ff9b1a;
 $skin-li-border: #cdcdcd;
 $skin-info-border: #dcdcdc;
 
+$skin-page-bg: #f7f7f7;
+$color-page: #9c9c9c;
+$skin-page: #f3f3f3;
+$skin-page-dark: #4d4d4d;
+
+$color-thumb: #676767;
+$color-src-date: #ededed;
+
 #page-bd .wrap {
     padding-top: 50px;
     color: $color-helpcenter;
 }
+#page-bd .skin-dark .wrap {
+    padding: 20px 0;
+    form {
+        height: 42px;
+        input[type="text"] {
+            width: 520px;
+            line-height: 42px;
+        }
+        button {
+            width: 107px;
+        }
+    }
+}
+#page-bd .skin-dark + .wrap {
+    padding: 0 0 50px;        
+}
 
+
+// 帮助中心首页
 .col-l {
     width: 765px;
     float: left;
@@ -184,5 +210,85 @@ h2.title {
         a:hover {
             color: $color-link-hover;
         }
+    }
+}
+
+// 帮助中心内容页
+.breadthumb {
+    font-size: 16px;
+    color: $color-thumb;
+    padding: 24px 0;
+}
+.src-result ol li {
+    padding-bottom: 24px;
+    a {
+        font-size: 18px;
+        color: $color-helpcenter;
+        display: block;
+        padding: 0 0 5px 0;
+        @include transitionpro(color);
+        &:hover {
+            color: $color-link-hover;
+        }
+    }
+    p {
+        line-height: 2em;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        em {
+            font-style: normal;
+            color: $color-highlight;
+        }
+    }
+    .source {
+        width: 350px;
+        position: relative;
+        a {
+            font-size: 14px;
+            color: $color-link-hover;
+            display: block;
+            width: 250px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        span.date {
+            color: $color-src-date;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+}
+
+// 分页
+.pages {
+    text-align: center;
+    margin-top: 70px;
+    color: $color-page;
+    ol {
+        display: inline-block;
+    }
+    li {
+        background: $skin-page;
+        padding: 9px 13px;
+        display: inline-block;
+        cursor: pointer;
+        line-height: 1em;
+        &:hover {
+            color: $color-highlight;
+        }
+    }
+    li.active {
+        background: $skin-page-dark;
+        color: $color-light;
+    }
+    strong {
+        margin-left: 20px;
     }
 }
