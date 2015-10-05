@@ -2,7 +2,7 @@
 *@file gulp
 */
 // require
-var pwd = process.env.PWD || "E:/workspace/";
+var pwd = __dirname;
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 var ejs = require('gulp-ejs');
@@ -134,3 +134,4 @@ gulp.task('start:server', function () {
 });
 // run task
 gulp.task('dev', ['compile:sass', 'compile:ejs', 'compile:js', 'replace:style', 'replace:script', 'compile:widget', 'cp:img','watch:file', 'start:server']);
+
