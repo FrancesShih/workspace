@@ -121,7 +121,7 @@ gulp.task('compile:widget', ['replace:script'], function () {
 gulp.task('mini:css', ['compile:widget'], function () {
     gulp.src(ministylepath)
         .pipe(minicss())
-        .pipe(gulp.dest(ministylepath));
+        .pipe(gulp.dest('output/assets/style/'));
 });
 
 gulp.task('cp:img', function () {
