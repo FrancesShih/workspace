@@ -31,6 +31,11 @@ var widgetpath = 'widget/';
 var jspath_lib = ['assets/**/*.js'];
 var replacefilepath = 'output/template/**/*.html';
 
+// minipath
+var ministylepath = 'output/assets/style/**/*.css';
+var miniscriptpath = 'output/assets/style/**/*.js';
+var minihtml = 'output/tempate/**/*.html';
+
 // fn
 function getFolders (dir) {
     return fs.readdirSync(dir)
@@ -113,6 +118,12 @@ gulp.task('compile:widget', ['replace:script'], function () {
         .pipe(gulp.dest(filepath));
 });
 
+gulp.task('mini:css', ['compile:widget'], function () {
+    gulp.src(ministylepath)
+        .pipe(minicss())
+        .pipe(gulp.dest(ministylepath));
+});
+
 gulp.task('cp:img', function () {
     gulp.src(['assets/img/**/*.png', 'assets/img/**/*.ico'])
         .pipe(gulp.dest('output/assets/img'));
@@ -132,6 +143,9 @@ gulp.task('start:server', function () {
         livereload: true
     })
 });
+
 // run task
 gulp.task('dev', ['compile:sass', 'compile:ejs', 'compile:js', 'replace:style', 'replace:script', 'compile:widget', 'cp:img','watch:file', 'start:server']);
+
+gulp.task('build', ['compile:sass', 'compile:ejs', 'compile:js', 'replace:style', 'replace:script', 'compile:widget', 'cp:img', 'mini:css', 'start:server']);
 

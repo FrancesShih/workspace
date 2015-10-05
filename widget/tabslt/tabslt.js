@@ -33,7 +33,6 @@ define(function (require, exports, module){
 	pro.prepare = function () {
 		var self = this;
 		var size = self.switching.size();
-        console.log(self.switchwrap);
 		self.control.eq(0).addClass('active');
 		self.switcwrap.css({
 			'width': self.item * size + 'px',
