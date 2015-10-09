@@ -1,0 +1,68 @@
+/**
+*@file left about type
+*/
+
+@import  '../../assets/style/lib/skin.scss';
+$font-size-a: 12px;
+$font-size-b: 14px;
+$font-size-c: 20px;
+$font-size-d: 34px;
+$font-size-e: 16px;
+$color: #333;
+$color-selected: #dc353b;
+$color-second: #666;
+
+.menu {
+    > li {
+        margin-bottom: 22px;
+        ol {
+            display: none;
+        }
+        a{
+            font-size: $font-size-c;
+            color: $color;
+            img {
+                margin-right: 8px;
+            }
+        }
+        > ol > li {
+            margin-bottom: 20px;
+            margin-left: 25px;
+            &:first-child {
+               margin-top: 20px; 
+            }
+            a {
+                font-size: $font-size-e;
+                color: $color-second;
+            }
+            > ol > li {
+                margin-bottom: 15px;
+                margin-left: 42px;
+                &:first-child {
+                   margin-top: 15px; 
+                }
+                a {
+                    font-size: $font-size-b;
+                    color: $color-second;
+                }
+                &:hover {
+                    a { color: $color; }
+                }
+                .red {
+                    color: $color-selected;
+                }
+            }
+        }
+        > ol > .level-one {
+            margin-left: 53px;
+        }
+        > ol > li > .red {
+            color: $color-selected;
+        }
+    }
+    .level-one > ol > li{
+        margin-left: 53px; 
+    }
+}
+
+

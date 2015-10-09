@@ -17,6 +17,7 @@ $skin-page-dark: #4d4d4d;
 
 $color-thumb: #676767;
 $color-src-date: #ededed;
+$border-color: #ebebeb;
 
 #page-bd .wrap {
     padding-top: 50px;
@@ -290,5 +291,53 @@ h2.title {
     }
     strong {
         margin-left: 20px;
+    }
+}
+
+//文档介绍页doc
+.doc {
+    background: #fff;
+    .wrap {
+        padding: 50px 0;
+        .col-ln {
+            float: left;
+            width: 230px;
+            min-height: 1300px;
+            border-right: 1px solid $border-color;
+        }
+        .col-rn {
+            margin-left: 20px;
+            float: right;
+            width: 730px; 
+            h1 {
+                font-size: 34px;
+                line-height: 1em;
+                font-weight: normal;
+                padding-bottom: 0;
+            }
+            p {
+                line-height: 2em;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            img {
+                margin: 50px 0 50px 120px;
+            }
+            .word-a {
+                margin-top: 24px;
+                font-size: 14px;
+                color: #333;
+            }
+            .word-b {
+                margin-top: 20px;
+                font-size: 12px;
+                color: #666;
+            }
+            .word-c {
+                font-size: 14px;
+                color: #666;
+            }
+        }
     }
 }

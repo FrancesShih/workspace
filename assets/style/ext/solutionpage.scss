@@ -1,5 +1,12 @@
 @import '../lib/skin.scss';
-
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1444369940_228657.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1444369940_228657.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1444369940_228657.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1444369940_228657.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1444369940_228657.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
 $font-color-a: #464646;
 $font-color-b: #868686;
 $font-color-c: #ea4444;
@@ -14,7 +21,14 @@ $border-color-c: #ff7dc0;
 $border-color-d: #ca9aff;
 $border-color-e: #e3e3e3;
 $bg-a: #fbeded;
-
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:30px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
 .gather-inline {
 	display: block;
 	li {
@@ -41,11 +55,9 @@ $bg-a: #fbeded;
         	display: block;
         	box-sizing: border-box;
         	padding: 25px 0 20px;
-	        img {
+	        .img {
 	        	display: block;
 	        	margin: 0 auto;
-		        width: 48px;
-		        heigth: 48px;
 		        margin-bottom: 28px;
 		    }
 		    .border{
