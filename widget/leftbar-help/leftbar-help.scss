@@ -21,23 +21,21 @@ $color-second: #666;
         a{
             font-size: $font-size-c;
             color: $color;
-            img {
-                margin-right: 8px;
-            }
         }
         > ol > li {
             margin-bottom: 20px;
-            margin-left: 25px;
             &:first-child {
                margin-top: 20px; 
             }
             a {
+                background-position: 24px 5px;
+                padding-left: 48px;
                 font-size: $font-size-e;
                 color: $color-second;
             }
             > ol > li {
                 margin-bottom: 15px;
-                margin-left: 42px;
+                padding-left: 16px;
                 &:first-child {
                    margin-top: 15px; 
                 }
@@ -53,15 +51,14 @@ $color-second: #666;
                 }
             }
         }
-        > ol > .level-one {
-            margin-left: 53px;
-        }
         > ol > li > .red {
             color: $color-selected;
         }
     }
-    .level-one > ol > li{
-        margin-left: 53px; 
+    a {
+        background: url("/assets/img/common/icon-helpdoc-left.png") no-repeat;
+        background-position: 0px 5px;
+        padding-left: 24px;
     }
 }
 
