@@ -217,17 +217,26 @@ $skin-pro-conf-border: #b5b5b5;
     li {
         float: left;
         width: 138px;
-        height: 58px;
-        border: 1px solid $skin-case-border;
-        background: $skin-case-bg;
-        overflow: hidden;
         margin-right: 15px;
-        @include transitionpro(background);
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        > div {
+            height: 58px;
+            border: 1px solid $skin-case-border;
+            background: $skin-case-bg;
+            overflow: hidden;
+            margin-bottom: 10px;
+            @include transitionpro(background);
+        }
         &:last-child {
             margin-right: 0;
         }
         &:hover {
-            background: $skin-case-hover; 
+           > div {
+             background: $skin-case-hover; 
+           }
         }
         img {
             width: 138px;
