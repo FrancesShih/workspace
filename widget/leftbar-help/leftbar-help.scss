@@ -19,6 +19,7 @@ $color-second: #666;
             display: none;
         }
         a{
+            padding-left: 24px;
             font-size: $font-size-c;
             color: $color;
         }
@@ -28,8 +29,8 @@ $color-second: #666;
                margin-top: 20px; 
             }
             a {
-                background-position: 24px 5px;
-                padding-left: 48px;
+                padding-left: 48px !important;
+                background-position-x: 24px !important;
                 font-size: $font-size-e;
                 color: $color-second;
             }
@@ -40,26 +41,32 @@ $color-second: #666;
                    margin-top: 15px; 
                 }
                 a {
+                    padding-left: 24px;
                     font-size: $font-size-b;
                     color: $color-second;
                 }
                 &:hover {
                     a { color: $color; }
                 }
-                .red {
-                    color: $color-selected;
-                }
             }
         }
-        > ol > li > .red {
-            color: $color-selected;
-        }
     }
-    a {
+    .active {
+        display: block;
+    }
+    .menu-add {
+        background-position-y: 5px !important;
+    }
+    .menu-sub {
+        background-position-y: -22px !important;
+    }
+    .selected {
+        color: $color-selected;
+    }
+    .menu-bg {
         background: url("/assets/img/common/icon-helpdoc-left.png") no-repeat;
         background-position: 0px 5px;
-        padding-left: 24px;
     }
-}
+}   
 
 
