@@ -8,13 +8,18 @@ $color-sns: #8692b5;
 $color-news: #464646;
 $color-date: #797979;
 $color-page: #9c9c9c;
+$color-code-highlight: #ff5a00;
+$color-code-sig: #818181;
 $skin-list-border: #ececec;
 $skin-page: #f3f3f3;
 $skin-page-dark: #4d4d4d;
+$skin-code-bg: #f7f7f7;
+$skin-newslist: #fffbeb;
+
 
 #page-bd {
     background: $skin-page-bg;
-    .wrap:first-child {
+    > .wrap:first-child {
         padding-top: 25px;
     }
 }
@@ -24,7 +29,7 @@ $skin-page-dark: #4d4d4d;
 }
 .col-r {
     float: right;
-    width: 790px;
+    width: 788px;
     background: $skin-light;
     padding: 30px 20px;
     min-height: 800px;
@@ -34,11 +39,13 @@ h2.title {
     font-size: 24px;
     font-weight: normal;
     border-left: 5px solid $skin-highlight;
-    padding-left: 20px;
+    padding-left: 16px;
     line-height: 1em;
-    margin-bottom: 25px;
-    &:nth-of-type(2) {
-        margin-top: 25px;
+    margin: 25px 0;
+    color: $color-news;
+    &:nth-of-type(1) {
+        margin-top: 0;
+        margin-bottom: 25px;
     }
 }
 p {
@@ -113,28 +120,34 @@ p {
 // newslist
 .newslist {
     li {
-        padding: 30px 0;
+        padding: 20px 0;
         position: relative;
         border-bottom: 1px solid $skin-list-border;
-
+        @include transitionpro(background);
         span {
             color: $color-date;
             position: absolute;
             right: 0;
-            top: 40px;
+            top: 24px;
+        }
+        &:hover {
+            background: $skin-newslist; 
         }
     }
     a {
-        font-size: 24px;
+        font-size: 18px;
         color: $color-news;
         text-overflow: ellipsis;
         display: block;
-        width: 600px;
+        width: 570px;
+        padding-left: 30px;
         white-space: nowrap;
         overflow: hidden;
+        background: url('/assets/img/common/ico-list.png') 12px center no-repeat;
         @include transitionpro(color);
         &:hover {
-            color: $color-link-hover;
+            color: $color-highlight;
+            background: url('/assets/img/common/ico-list-hover.png') 12px center no-repeat;
         }
     }
 }
@@ -227,4 +240,78 @@ p {
     }
 }
 
+// colink
+.colink {
+    dl {
+        float: left;
+        width: 100%;
+        dt {
+            clear: both;
+            float: left;
+            width: 168px;
+            p {
+                font-size: 18px;
+            }
+            blockquote {
+                font-size: 24px;
+                color: $color-highlight;
+                padding: 18px 20px;
+            }
+        }
+        dd {
+           float: left;
+           background: $skin-code-bg;
+           padding: 18px;
+           margin: 0 0 34px 0;
+           textarea {
+                width: 430px;
+                height: 120px;
+                border: 0;
+                outline: 0;
+                background: transparent;
+                resize: none;
+                font-size: 14px;
+                color: $color-des;
+            }
+        }
+    }
 
+    a {
+        display: inline-block;
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0 20px;
+    }
+}
+
+// 合作伙伴
+.col-r img.banner {
+    margin: -30px 0 30px -20px;
+}
+.flowchart {
+    text-align: center;
+    img {
+        margin: 0 auto;
+    }
+    .code {
+        text-align: left;
+        background: $skin-code-bg;
+        padding: 18px;
+        margin: 0 20px;
+        color: $color-news;
+        em {
+            font-style: normal;
+            color: $color-code-highlight;
+        }
+        + p {
+            text-align: right;
+            padding-top: 10px;
+            color: $color-code-sig;
+            a {
+                color: $color-link-hover;
+            }
+        }
+    }
+}
