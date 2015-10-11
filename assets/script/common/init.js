@@ -7,6 +7,7 @@ define(function (require, exports, module) {
 	require('widget/topnav');
     require('widget/footbar');
     require('widget/helpbar');
+    require('widget/leftbar-help');
     
     var widget = require('widget/slidebanner');
     var insslide = new widget.slide({

@@ -1,0 +1,73 @@
+/**
+*@file left about type
+*/
+
+@import  '../../assets/style/lib/skin.scss';
+$font-size-a: 12px;
+$font-size-b: 14px;
+$font-size-c: 20px;
+$font-size-d: 34px;
+$font-size-e: 16px;
+$color: #333;
+$color-selected: #dc353b;
+$color-second: #666;
+
+.menu {
+    overflow: hidden;
+    > li {
+        margin-bottom: 22px;
+        ol {
+            overflow: hidden;
+        }
+        a{
+            padding-left: 24px;
+            font-size: $font-size-c;
+            color: $color;
+        }
+        > ol > li {
+            margin-bottom: 20px;
+            &:first-child {
+               margin-top: 20px; 
+            }
+            a {
+                padding-left: 48px !important;
+                background-position-x: 24px !important;
+                font-size: $font-size-e;
+                color: $color-second;
+            }
+            > ol > li {
+                margin-bottom: 15px;
+                padding-left: 16px;
+                &:first-child {
+                   margin-top: 15px; 
+                }
+                a {
+                    padding-left: 24px;
+                    font-size: $font-size-b;
+                    color: $color-second;
+                }
+                &:hover {
+                    a { color: $color; }
+                }
+            }
+        }
+    }
+    .active {
+        display: block;
+    }
+    .menu-add {
+        background-position-y: 5px !important;
+    }
+    .menu-sub {
+        background-position-y: -22px !important;
+    }
+    .selected {
+        color: $color-selected;
+    }
+    .menu-bg {
+        background: url("/assets/img/common/icon-helpdoc-left.png") no-repeat;
+        background-position: 0px 5px;
+    }
+}   
+
+
