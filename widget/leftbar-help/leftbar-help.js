@@ -9,13 +9,19 @@ define(function (require, exports, module) {
         var $this = $(this);
         //给有子节点的添加图标
         if($this.has('ol').length > 0) {
-            $(this).children('a').addClass('menu-bg');
+            $this.children('a').addClass('menu-bg');
+            $this.attr('data-h', $this.children('ol').height());
         } 
         //通过子节点找到父节点
         if($this.find('a').hasClass('selected')) {
-            $this.parents('ol').addClass('active');
+            //$this.parents('ol').addClass('active');
             $this.closest('li').children('a').addClass('menu-sub selected');
-        } 
+        } else {
+            $this.find('ol').css({
+                'height': 0,
+                'visibility': 'hidden'
+            });
+        }
 
         // bind click
         $this.on('click', function (e) {
@@ -26,6 +32,7 @@ define(function (require, exports, module) {
             var $ol = p.children("ol");
 
             if(p.has('ol').length > 0) {
+                /*
                 $ol.toggle(350, function () {
                     /*
                     if(p.children('a').hasClass('menu-sub')) {
@@ -35,7 +42,7 @@ define(function (require, exports, module) {
                         p.children('a').removeClass('menu-add');
                         p.children('a').addClass('menu-sub');
                     }
-                    */
+                    
                 });
                 p.children('a').toggleClass(function () {
                     if(p.children('a').hasClass('menu-sub')) {
@@ -44,6 +51,28 @@ define(function (require, exports, module) {
                         return 'menu-sub';
                     }
                 });
+                */
+                var height = p.attr('data-h');
+
+                if(p.children('a').hasClass('menu-sub')) {
+                    p.children('a').addClass('menu-add');
+                    p.children('a').removeClass('menu-sub');
+                    $ol.animate({
+                        'height': 0
+                    }, 350, function () {
+                        p.children('ol').css({'visibility': 'hidden'});
+                    });
+                    p.children('ol').css({'height': ''});
+                } else {
+                    p.children('a').addClass('menu-sub');
+                    p.children('a').removeClass('menu-add');
+                    $ol.css({'visibility': 'visible'});
+                    $ol.animate({
+                        'height': height + 'px'
+                    }, 350, function () {
+                        $ol.css({'height': ''});
+                    });
+                }  
             }
         });
     });

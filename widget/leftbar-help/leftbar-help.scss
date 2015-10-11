@@ -13,10 +13,11 @@ $color-selected: #dc353b;
 $color-second: #666;
 
 .menu {
+    overflow: hidden;
     > li {
         margin-bottom: 22px;
         ol {
-            display: none;
+            overflow: hidden;
         }
         a{
             padding-left: 24px;
