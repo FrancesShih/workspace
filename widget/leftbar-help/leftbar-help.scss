@@ -29,6 +29,9 @@ $color-second: #666;
             &:first-child {
                margin-top: 20px; 
             }
+            &:last-child {
+               margin-bottom: 0px; 
+            }
             a {
                 padding-left: 48px !important;
                 background-position-x: 24px !important;
@@ -40,6 +43,9 @@ $color-second: #666;
                 padding-left: 16px;
                 &:first-child {
                    margin-top: 15px; 
+                }
+                &:last-child {
+                   margin-bottom: 0px; 
                 }
                 a {
                     padding-left: 24px;
