@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> 金山云 </title>
+        <%include inc/common.ejs %>
+        <!--resstyle[/assets/style/ext/product.scss]-->
+    </head>
+    <body>
+        <div id="page-hd">
+        <%include inc/head.ejs%>
+        </div>
+        <!--productpagestarts-->        
+        <div id="page-bd">
+            <div class="wrap">
+                <div class="col-l">
+                    <%include inc/pro-col-l.ejs %>
+                </div>
+                <div class="col-r">
+                    <div class="pro-intro">
+                        <img src="/assets/img/static/product/pic-intro-lb.png" class="intro-img"/>
+                        <h1>负载均衡 SLB</h1>
+                        <p>负载均衡是对多台云服务器（计算集群）进行流量分发的网络服务设备。它可以通过流量分发，快速提高应用系统对外的服务能力；隐藏实际服务端口，增强内部系统的安全性；通过消除服务单点故障，提升应用系统的可靠性。</p>
+                        <ol>
+                            <li>0元试用3个月</li>
+                        </ol>
+                        <div class="intro-pay">
+                            <a href="#" class="btn">免费开通</a>
+                        </div>
+                    </div>
+                    <ol class="tab">
+                        <li class="active">产品优势</li>
+                        <li>产品功能</li>
+                        <li>用户案例</li>
+                        <li>文档资料</li>
+                    </ol>
+                    <h2>产品优势</h2>
+                    <div class="pro-des">
+                        <h4>高性能</h4>
+                        <img src="/assets/img/static/product/pro-des-lb-1.png"/>
+                        <p>分布式集群满足大规模业务分发的性能要求</p>
+                    </div>
+                    <div class="pro-des">
+                        <h4>高稳定性</h4>
+                        <img src="/assets/img/static/product/pro-des-lb-2.png"/>
+                        <p>冗余设计，无单点；后端服务器可以随业务量方便的扩展</p>
+                    </div>
+                    <div class="pro-des">
+                        <h4>低成本</h4>
+                        <img src="/assets/img/static/product/pro-des-lb-3.png"/>
+                        <p>使用金山云的负载均衡实例，可以快速低成本搭建业务；对于内网负载均衡产品，目前实行免费创建实例并分配IP地址</p>
+                    </div>
+                    <div class="pro-des">
+                        <h4>安全</h4>
+                        <img src="/assets/img/static/product/pro-des-lb-4.png"/>
+                        <p>支持LVS SYNPROXY技术防攻击能力</p>
+                    </div>
+                    <h2>产品功能</h2>
+                    <ol class="functional">
+                        <li>
+                            <img src="/assets/img/static/product/pro-fn-lb-1.png"/>
+                            <h5>基本转发服务</h5>
+                            <p>支持公网/私网类型服务；提供4层（TCP协议）和7层（HTTP）的网络业务服务</p>
+                        </li>
+                        <li>
+                            <img src="/assets/img/static/product/pro-fn-lb-2.png"/>
+                            <h5>灵活绑定<br/>解绑弹性IP</h5>
+                            <p>支持绑定解绑/弹性IP，增加了灵活性，增加业务的可用性</p>
+                        </li>
+                        <li>
+                            <img src="/assets/img/static/product/pro-fn-lb-3.png"/>
+                            <h5>健康检查服务</h5>
+                            <p>分布式集群根据配置对后端服务器完成健康检查，自动隔离状态异常的后端服务器</p>
+                        </li>
+                        <li>
+                            <img src="/assets/img/static/product/pro-fn-lb-4.png"/>
+                            <h5>会话保持</h5>
+                            <p>对TCP和HTTP协议都支持会话保持功能，将同一个客户的请求分发到后端同一个服务器上 </p>
+                        </li>
+                    </ol>
+                    <h2>用户案例</h2>
+                    <ol class="showcase">
+                        <li><div><a href="#"><img src="/assets/img/static/product/pro-case-1.png"/></a></div>完美世界</li>
+                        <li><div><a href="#"><img src="/assets/img/static/product/pro-case-2.png"/></a></div>完美世界</li>
+                        <li><div><a href="#"><img src="/assets/img/static/product/pro-case-3.png"/></a></div>完美世界</li>
+                        <li><div><a href="#"><img src="/assets/img/static/product/pro-case-4.png"/></a></div>完美世界</li>
+                        <li><div><a href="#"><img src="/assets/img/static/product/pro-case-5.png"/></a></div>完美世界</li>
+                    </ol>
+                    <h2>文档资料</h2>
+                    <ol class="pro-file">
+                        <li>
+                            <h5>购买指导</h5>
+                            <a href="#">如何备案</a>
+                            <a href="#">分区格式化/挂载数据盘</a>
+                            <a href="#">ECS服务器连接管理终端使用说明</a>
+                            <a href="#">自动快照功能介绍</a>
+                            <a href="#">独立云磁盘和可用区常见问题</a>
+                            <a href="#">本地SSD盘常见问题FAQ</a>
+                        </li>
+                        <li>
+                            <h5>操作指引</h5>
+                            <a href="#">如何备案</a>
+                            <a href="#">分区格式化/挂载数据盘</a>
+                            <a href="#">ECS服务器连接管理终端使用说明</a>
+                            <a href="#">自动快照功能介绍</a>
+                            <a href="#">独立云磁盘和可用区常见问题</a>
+                            <a href="#">本地SSD盘常见问题FAQ</a>
+                        </li>
+                        <li>
+                            <h5>常见问题</h5>
+                            <a href="#">如何备案</a>
+                            <a href="#">分区格式化/挂载数据盘</a>
+                            <a href="#">ECS服务器连接管理终端使用说明</a>
+                            <a href="#">自动快照功能介绍</a>
+                            <a href="#">独立云磁盘和可用区常见问题</a>
+                            <a href="#">本地SSD盘常见问题FAQ</a>
+                        </li>
+                    </ol>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!--productpageends-->        
+        <div class="page-ft">
+            <%include inc/foot.ejs%>
+        </div>
+        <script type="text/javascript" data-main="/assets/script/product/conf" src="/assets/script/lib/require.js"></script>
+    </body>
+</html>
