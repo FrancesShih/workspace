@@ -15,6 +15,7 @@ var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var replace = require('gulp-replace');
 var sourcemap = require('gulp-sourcemaps');
+var imagemin = require('gulp-imagemin');
 var fs = require('fs');
 var path = require('path');
 var widget = require(pwd + '/engine/widget.js');
@@ -162,3 +163,8 @@ gulp.task('dev', ['compile:sass', 'compile:ejs', 'compile:js', 'replace:style', 
 
 gulp.task('build', ['compile:sass', 'compile:ejs', 'compile:js', 'replace:style', 'replace:script', 'compile:widget', 'cp:img', 'mini:css', 'mini:html', 'start:server']);
 
+gulp.task('imagemin', function () {
+    gulp.src(['assets/img/**/*.png'])         
+        .pipe(imagemin())         
+        .pipe(gulp.dest('output/assets/img'));
+});
