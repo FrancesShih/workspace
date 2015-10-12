@@ -1,15 +1,5 @@
-
-output/**/*.css
-
-output/**/*.html
-
-output/**/*.js
-
-output/**/*.png
-
-output/**/*.ejs
-
 *.swp
+output/*
+node_modules/*
+engine/node_modules/*
 
-
-output/assets/img/static/favicon.ico

@@ -13,6 +13,7 @@ $skin-case-bg: #fafafa;
 $skin-case-hover: #eee;
 $skin-pro-conf: #dadada;
 $skin-pro-conf-border: #b5b5b5;
+$skin-btn-disabled: #bfbfbf;
 
 #page-bd .wrap {
     padding: 45px 0 115px;
@@ -144,11 +145,12 @@ $skin-pro-conf-border: #b5b5b5;
         display: inline-block;
         border-bottom: 1px solid $skin-title-border;
         padding-bottom: 5px;
+        font-size:16px;
         font-weight: normal;  
     }
     img {
         position: absolute;
-        right: 0;
+        right: 15px;
         top: 0;
         width: 145px;
         height: 100px;
@@ -202,8 +204,7 @@ $skin-pro-conf-border: #b5b5b5;
         font-size: 16px;
         color: $color-fn;
         font-weight: normal;
-        padding: 15px 0;
-        line-height: 1em;
+        padding: 10px 0;
     }
     p {
         font-size: 12px;
@@ -222,6 +223,9 @@ $skin-pro-conf-border: #b5b5b5;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        p {
+            padding-bottom: 20px;
+        }
         > div {
             height: 58px;
             border: 1px solid $skin-case-border;
@@ -339,5 +343,11 @@ $skin-pro-conf-border: #b5b5b5;
     @include transproptime(background, 200ms);
     &:hover {
         background: #d81b1b;
+    }
+}
+.disabled {
+    background: $skin-btn-disabled;
+    &:hover {
+        background: #b3b3b3;
     }
 }
